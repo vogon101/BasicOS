@@ -27,5 +27,40 @@ namespace Input
             return mouse.Y;
         }
 
+        public Mouse.MouseState getButton ()
+        {
+            return mouse.Buttons;
+        }
+
+        public bool isLeftClicked ()
+        {
+            return (getButton() == Mouse.MouseState.Left);
+        }
+
+        public bool isRightClicked ()
+        {
+            return (getButton() == Mouse.MouseState.Right);
+        }
+
+        public bool isMiddleClicked ()
+        {
+            return (getButton() == Mouse.MouseState.Middle);
+        }
+
+        public bool isAnyClicked ()
+        {
+            return !(getButton() == Mouse.MouseState.None);
+        }
+
+        public void setX(int x)
+        {
+            mouse.X = x;
+        }
+
+        public void setY(int y)
+        {
+            mouse.Y = y;
+        }
+
     }
 }

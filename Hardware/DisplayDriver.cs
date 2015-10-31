@@ -6,6 +6,7 @@ namespace Display
     {
 
         protected VGAScreen screen;
+        private int width, height;
 
         public DisplayDriver()
         {
@@ -16,6 +17,8 @@ namespace Display
         {
             screen.SetGraphicsMode(VGAScreen.ScreenSize.Size320x200, VGAScreen.ColorDepth.BitDepth8);
             screen.Clear(0);
+            width = screen.PixelWidth;
+            height = screen.PixelHeight;
         }
 
         public virtual void setPixel (int x, int y, int c)
@@ -43,12 +46,12 @@ namespace Display
 
         public int getWidth()
         {
-            return screen.PixelWidth;
+            return width;
         }
 
         public int getHeight()
         {
-            return screen.PixelHeight;
+            return height;
         }
     }
 }

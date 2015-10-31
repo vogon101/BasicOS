@@ -16,8 +16,6 @@ namespace MicrOS
     public class MicrOS : Sys.Kernel
     {
         protected int mCount = 0;
-        protected int mColor = 1;
-        protected int mOffset = 0;
         public DisplayDriver display;
         public MouseDriver mouse;
         public MouseRenderer mr;
@@ -49,7 +47,18 @@ namespace MicrOS
                 fr.renderString(10, 20, "X " + mouse.X().ToString());
                 fr.renderString(10, 30, "Y " + mouse.Y().ToString());
                 fr.renderString(10, 40, mc.ToString());
+                fr.renderString(10, 50, "HELLO WORLD\nTHIS IS FREDDIE");
+                if (mouse.isLeftClicked())
+                {
+                    fr.renderString(10, 70, "LEFT BUTTON DOWN");
+                }
+                if (mouse.isRightClicked())
+                {
+                    fr.renderString(10, 70, "RIGHT BUTTON DOWN");
+                }
                 mr.renderMouse();
+                fr.renderString(10, 80, "CX " + ((BufferedDisplayDriver)display).changeX.ToString());
+                fr.renderString(10, 90, "CY " + ((BufferedDisplayDriver)display).changeY.ToString());
                 display.step();
             }
         }

@@ -5,6 +5,9 @@ namespace Display
     public class BufferedDisplayDriver: DisplayDriver
     {
         byte[] buffer = new byte[320*200];
+        public bool didChange = false;
+        public int changeX, changeY;
+
 
         public BufferedDisplayDriver():base()
         {
@@ -12,7 +15,15 @@ namespace Display
 
         override public void setPixel(int x, int y, int c)
         {
-            buffer[x+(y*320)] = (byte)c;
+            if (getPixel(x, y) != (byte)c)
+            {
+                buffer[x + (y * 320)] = (byte)c;
+                didChange = true;
+                if (x>changeX)
+                    changeX = x + 1;
+                if (y>changeY)
+                    changeY = y + 1;
+            }
         }
 
         public override byte getPixel(int x, int y)
@@ -31,8 +42,12 @@ namespace Display
             {
                 for (int y=0; y< getHeight(); y++)
                 {
-                    if (buffer[x+(y*320)] != (byte) c)
-                        buffer[x+(y*320)] = (byte)c;
+                    if (buffer[x + (y * 320)] != (byte)c)
+                    {
+                        buffer[x + (y * 320)] = (byte)c;
+                        changeX = x;
+                        changeY = y;
+                    }
                 }
             }
         }
@@ -44,13 +59,18 @@ namespace Display
 
         public void reDraw()
         {
-            for (int x = 0; x < buffer.Length/200; x++)
+            if (didChange)
             {
-                for (int y = 0; y < buffer.Length/320; y++)
+                for (int x = 0; x < changeX; x++)
                 {
-                    base.setPixel(x, y, buffer[x+(y*320)]); 
+                    for (int y = 0; y < changeY; y++)
+                    {
+                        base.setPixel(x, y, buffer[x + (y * getWidth())]);
+                    }
                 }
             }
+            changeX = 0;
+            changeY = 0;
             clear(0);
         }
 

@@ -52,7 +52,7 @@ namespace SystemUtils
                 if (t[i] == '\n')
                 {
                     wy += font.fontSize + nlgap;
-                    wx = 0;
+                    wx = x;
                 }
                 renderChar(wx, wy, t[i], color);
                 wx += gap + font.fontSize;
