@@ -1,0 +1,1 @@
+C:\Users\Freddie\Desktop\Programming\COSMOS\Cosmos\Demos\BasicOS\BasicOS\CosmosKernel1\obj\Debug\DisplayDriverBoot.CosmosResolveAssemblyReference.cache
