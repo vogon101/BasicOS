@@ -43,7 +43,7 @@ namespace MicrOS
             int mc = 0;
             while (true) {
                 mc++;
-                fr.renderString(10, 10, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 .!?\"'+-=_");
+                fr.renderString(10, 10, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 .!?\"'+-=_<>:");
                 fr.renderString(10, 20, "X " + mouse.X().ToString());
                 fr.renderString(10, 30, "Y " + mouse.Y().ToString());
                 fr.renderString(10, 40, mc.ToString());
