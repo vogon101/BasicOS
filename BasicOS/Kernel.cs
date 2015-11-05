@@ -10,6 +10,7 @@ using Display;
 using SystemUtils;
 using BasicOS;
 using Input;
+using Core;
 
 namespace MicrOS
 {
@@ -27,9 +28,9 @@ namespace MicrOS
         protected override void BeforeRun()
         {
             //This function is called before COSMOS starts
-            Console.WriteLine("Cosmos booted sucessfully, now starting Kernel");
+            //Console.WriteLine("Cosmos booted sucessfully, now starting Kernel");
             display = new BufferedDisplayDriver();
-            display.init();
+            display.init(); 
 
             mouse = new MouseDriver(display.getHeight(), display.getWidth());
             mr = new MouseRenderer(mouse, display, 2);
@@ -40,26 +41,13 @@ namespace MicrOS
         {
             Font f = new BasicFont();
             FontRenderer fr = new FontRenderer(display, f);
-            int mc = 0;
+            Desktop desktop = null;
+            WindowManager windowManager = new WindowManager(display, desktop, fr);
             while (true) {
-                mc++;
-                fr.renderString(10, 10, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 .!?\"'+-=_");
-                fr.renderString(10, 20, "X " + mouse.X().ToString());
-                fr.renderString(10, 30, "Y " + mouse.Y().ToString());
-                fr.renderString(10, 40, mc.ToString());
-                fr.renderString(10, 50, "HELLO WORLD\nTHIS IS FREDDIE");
-                if (mouse.isLeftClicked())
-                {
-                    fr.renderString(10, 70, "LEFT BUTTON DOWN");
-                }
-                if (mouse.isRightClicked())
-                {
-                    fr.renderString(10, 70, "RIGHT BUTTON DOWN");
-                }
+                //windowManager.step();
                 mr.renderMouse();
-                fr.renderString(10, 80, "CX " + ((BufferedDisplayDriver)display).changeX.ToString());
-                fr.renderString(10, 90, "CY " + ((BufferedDisplayDriver)display).changeY.ToString());
                 display.step();
+                
             }
         }
     }

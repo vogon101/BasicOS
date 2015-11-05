@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
+    <Reference Include="Cosmos.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
+    <Reference Include="Cosmos.Core.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
+    <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
+    <Reference Include="Cosmos.Debug.Kernel.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
+    <Reference Include="Cosmos.HAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
     <Reference Include="Cosmos.System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL" />
+    <Reference Include="Cosmos.System.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -44,33 +51,13 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Assembler\Cosmos.Assembler.csproj">
-      <Project>{1116130e-28e0-428a-a597-f4b3b676c0ca}</Project>
-      <Name>Cosmos.Assembler</Name>
+    <ProjectReference Include="..\BasicOSUtils\BasicOSUtils.csproj">
+      <Project>{ea0801c0-650f-4427-96aa-0e327d93dd2d}</Project>
+      <Name>BasicOSUtils</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Build.Common\Cosmos.Build.Common.csproj">
-      <Project>{0462e82b-8c29-41a9-8265-9c89038adb29}</Project>
-      <Name>Cosmos.Build.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Build.MSBuild\Cosmos.Build.MSBuild.csproj">
-      <Project>{bc6ae974-1f18-4a19-a956-5062e4d3fd53}</Project>
-      <Name>Cosmos.Build.MSBuild</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Common\Cosmos.Common.csproj">
-      <Project>{1fac100c-d732-4ea4-b518-5af4baf64f2e}</Project>
-      <Name>Cosmos.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Core.Plugs\Cosmos.Core.Plugs.csproj">
-      <Project>{d9a87aad-fcc9-4517-b31d-e904dad00784}</Project>
-      <Name>Cosmos.Core.Plugs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.Core\Cosmos.Core.csproj">
-      <Project>{5ac4773c-cb4e-4cd9-8d50-02e10a07dee6}</Project>
-      <Name>Cosmos.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\source\Cosmos.HAL\Cosmos.HAL.csproj">
-      <Project>{6a991d03-1435-4005-9809-b8bacdf3b021}</Project>
-      <Name>Cosmos.HAL</Name>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6784eaea-983e-491a-a455-c5ac8afc44fe}</Project>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hardware\Hardware.csproj">
       <Project>{5fa26daa-7ffe-4974-8dec-1c69230d3fe0}</Project>

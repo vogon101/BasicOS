@@ -23,8 +23,8 @@ namespace Display
 
         public virtual void setPixel (int x, int y, int c)
         {
-            if(screen.GetPixel320x200x8((uint) x, (uint) y) != (uint) c)
-                screen.SetPixel320x200x8((uint) x, (uint) y, (uint) c);  
+            if (screen.GetPixel320x200x8((uint)x, (uint)y) != (uint)c)
+                setPixelRaw(x, y, c);
         }
 
         public virtual byte getPixel (int x, int y)
@@ -52,6 +52,36 @@ namespace Display
         public int getHeight()
         {
             return height;
+        }
+
+        public void setPixelRaw (int x, int y, int c)
+        {
+
+            screen.SetPixel320x200x8((uint)x, (uint)y, (uint)c);
+
+        }
+
+        public virtual void fillArea (int startX, int startY, int endX, int endY, int colour)
+        {
+
+            if (startX > endX)
+                throw new System.Exception("startX is greater than endX");
+
+            if (startY > endY)
+                throw new System.Exception("startX is greater than endX");
+
+            int x = startX;
+            int y = startY;
+            while (x != endX)
+            {
+                while (y != endY)
+                {
+                    setPixel(x, y, colour);
+                    y++;
+                }
+                x++;
+                y = startY;
+            }
         }
     }
 }

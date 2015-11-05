@@ -1,0 +1,17 @@
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\obj\Debug\BasicOSUtils.csprojResolveAssemblyReference.cache
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\BasicOSUtils.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\BasicOSUtils.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\SystemUtils.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\CosmosKernel1.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Common.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.HAL.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Debug.Kernel.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Core.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\SystemUtils.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\CosmosKernel1.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Common.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.HAL.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Debug.Kernel.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\bin\Debug\Cosmos.Core.pdb
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\obj\Debug\BasicOSUtils.dll
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOSUtils\obj\Debug\BasicOSUtils.pdb

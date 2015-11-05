@@ -6,7 +6,6 @@ namespace Display
     {
         byte[] buffer = new byte[320*200];
         public bool didChange = false;
-        public int changeX, changeY;
 
 
         public BufferedDisplayDriver():base()
@@ -19,10 +18,6 @@ namespace Display
             {
                 buffer[x + (y * 320)] = (byte)c;
                 didChange = true;
-                if (x>changeX)
-                    changeX = x + 1;
-                if (y>changeY)
-                    changeY = y + 1;
             }
         }
 
@@ -42,11 +37,9 @@ namespace Display
             {
                 for (int y=0; y< getHeight(); y++)
                 {
-                    if (buffer[x + (y * 320)] != (byte)c)
+                    if (buffer[x + (y * getWidth())] != (byte)c)
                     {
-                        buffer[x + (y * 320)] = (byte)c;
-                        changeX = x;
-                        changeY = y;
+                        buffer[x + (y * getWidth())] = (byte)c;
                     }
                 }
             }
@@ -61,22 +54,20 @@ namespace Display
         {
             if (didChange)
             {
-                for (int x = 0; x < changeX; x++)
+                for (int x = 0; x < getWidth(); x++)
                 {
-                    for (int y = 0; y < changeY; y++)
+                    for (int y = 0; y < getHeight(); y++)
                     {
                         base.setPixel(x, y, buffer[x + (y * getWidth())]);
                     }
                 }
             }
-            changeX = 0;
-            changeY = 0;
-            clear(0);
         }
 
         public override void step()
         {
             reDraw();
+            clear(0);
         }
 
     }

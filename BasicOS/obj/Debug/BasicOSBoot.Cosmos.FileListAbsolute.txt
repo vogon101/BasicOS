@@ -1,1 +1,2 @@
 C:\Users\Freddie\Desktop\Programming\COSMOS\Cosmos\Demos\BasicOS\BasicOS\BasicOS\obj\Debug\BasicOSBoot.CosmosResolveAssemblyReference.cache
+C:\Users\Freddie\Desktop\Programming\COSMOS\BasicOS\BasicOS\BasicOS\obj\Debug\BasicOSBoot.CosmosResolveAssemblyReference.cache
