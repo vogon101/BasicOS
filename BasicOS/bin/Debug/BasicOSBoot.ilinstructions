@@ -82,6 +82,7 @@ Neg
 Newarr
 Newobj
 Nop
+Not
 Or
 Pop
 Rem

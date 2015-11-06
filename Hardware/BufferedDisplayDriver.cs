@@ -12,11 +12,15 @@ namespace Display
         {
         }
 
+        public override void init()
+        {
+        }
+
         override public void setPixel(int x, int y, int c)
         {
             if (getPixel(x, y) != (byte)c)
             {
-                buffer[x + (y * 320)] = (byte)c;
+                buffer[x + (y * getWidth())] = (byte)c;
                 didChange = true;
             }
         }

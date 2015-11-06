@@ -10,11 +10,11 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <Profile>ISO</Profile>
+    <Profile>VMware</Profile>
     <!-- Looks like this was a mispelled attribute. Replaced by DebugEnabled below.
     <DebugEnable>true</DebugEnable>
     -->
-    <DebugEnabled>False</DebugEnabled>
+    <DebugEnabled>True</DebugEnabled>
     <DebugMode>Source</DebugMode>
     <TraceMode>User</TraceMode>
     <EnableGDB>False</EnableGDB>
@@ -22,9 +22,9 @@
     <VMWareEdition>Player</VMWareEdition>
     <OutputPath>bin\Debug\</OutputPath>
     <Name>BasicOSBoot</Name>
-    <Description>Creates a bootable ISO image which can be burned to a DVD. After running the selected project, an explorer window will open containing the ISO file. The ISO file can then be burned to a CD or DVD and used to boot a physical or virtual system.</Description>
+    <Description>Use VMware Player or Workstation to deploy and debug.</Description>
     <Deployment>ISO</Deployment>
-    <Launch>None</Launch>
+    <Launch>VMware</Launch>
     <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
     <VMware_Name>BasicOSBoot</VMware_Name>
     <VMware_Description>Use VMware Player or Workstation to deploy and debug.</VMware_Description>
@@ -48,9 +48,9 @@
     <ISO_OutputPath>bin\Debug\</ISO_OutputPath>
     <ISO_EnableGDB>False</ISO_EnableGDB>
     <ISO_StartCosmosGDB>False</ISO_StartCosmosGDB>
-    <StackCorruptionDetectionEnabled>True</StackCorruptionDetectionEnabled>
+    <StackCorruptionDetectionEnabled>False</StackCorruptionDetectionEnabled>
     <ISO_StackCorruptionDetectionEnabled>True</ISO_StackCorruptionDetectionEnabled>
-    <VMware_StackCorruptionDetectionEnabled>True</VMware_StackCorruptionDetectionEnabled>
+    <VMware_StackCorruptionDetectionEnabled>False</VMware_StackCorruptionDetectionEnabled>
     <PXE_StackCorruptionDetectionEnabled>True</PXE_StackCorruptionDetectionEnabled>
     <PXE_Name>BasicOSBoot</PXE_Name>
     <PXE_Description>Creates a PXE setup and hosts a DCHP and TFTP server to deploy directly to physical hardware. Allows debugging with a serial cable.</PXE_Description>

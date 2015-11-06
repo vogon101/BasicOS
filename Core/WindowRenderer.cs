@@ -30,6 +30,15 @@ namespace Core
             windowManager.display.setPixel(x, y, c);
         }
 
+        public void renderString (int x, int y, string text)
+        {
+            if (x > window.endX - window.startX)
+                throw new Exception("Window tried to draw to a pixel out of bounds");
+            if (y > window.endY - window.startY)
+                throw new Exception("Window tried to draw to a pixel out of bounds");
+            windowManager.fontRenderer.renderString(x, y, text);
+        }
+
         public void clear ()
         {
             windowManager.display.fillArea(window.startX, window.startY, window.endX, window.endY, bgColour);

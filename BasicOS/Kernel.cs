@@ -11,6 +11,7 @@ using SystemUtils;
 using BasicOS;
 using Input;
 using Core;
+using BasicOS.Programs;
 
 namespace MicrOS
 {
@@ -30,7 +31,9 @@ namespace MicrOS
             //This function is called before COSMOS starts
             //Console.WriteLine("Cosmos booted sucessfully, now starting Kernel");
             display = new BufferedDisplayDriver();
-            display.init(); 
+            PrintDebug("After display create");
+            display.init();
+            PrintDebug("After display init");
 
             mouse = new MouseDriver(display.getHeight(), display.getWidth());
             mr = new MouseRenderer(mouse, display, 2);
@@ -43,8 +46,12 @@ namespace MicrOS
             FontRenderer fr = new FontRenderer(display, f);
             Desktop desktop = null;
             WindowManager windowManager = new WindowManager(display, desktop, fr);
+            //windowManager.addWindow(new HelloWorldProgram(windowManager));
+            int status = 0;
             while (true) {
-                //windowManager.step();
+                PrintDebug("Before Step");
+                status = windowManager.step();
+                PrintDebug("After Step");
                 mr.renderMouse();
                 display.step();
                 

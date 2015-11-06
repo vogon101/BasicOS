@@ -6,20 +6,18 @@ namespace Display
     {
 
         protected VGAScreen screen;
-        private int width, height;
+        private int width, height = 0;
 
         public DisplayDriver()
         {
             screen = new VGAScreen();
-        }
-
-        public void init ()
-        {
             screen.SetGraphicsMode(VGAScreen.ScreenSize.Size320x200, VGAScreen.ColorDepth.BitDepth8);
-            screen.Clear(0);
+            clear(0);
             width = screen.PixelWidth;
             height = screen.PixelHeight;
         }
+
+        public virtual void init() { }
 
         public virtual void setPixel (int x, int y, int c)
         {
@@ -39,7 +37,17 @@ namespace Display
 
         public virtual void clear (int c)
         {
-            screen.Clear(c);
+            //screen.Clear(c);
+            for (int x = 0; x < getWidth(); x++)
+            {
+                for (int y = 0; y < getHeight(); y++)
+                {
+                    if (getPixel(x,y) != (byte)c)
+                    {
+                        setPixelRaw(x, y, c);
+                    }
+                }
+            }
         }
 
         public virtual void step() { }
@@ -83,5 +91,6 @@ namespace Display
                 y = startY;
             }
         }
+
     }
 }

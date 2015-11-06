@@ -14,15 +14,17 @@ namespace Core
         public string title = "Window";
 
         protected WindowRenderer renderer;
+        protected WindowManager windowManager;
 
         //TODO: Protect the display
-        public Window (int sX, int sY, int eX, int eY, WindowManager wm)
+        public Window (WindowManager wm)
         {
-            startX = sX;
-            startY = sY;
-            endX = eX;
-            endY = eY;
+            startX = wm.sX;
+            startY = wm.sY;
+            endX = wm.eX;
+            endY = wm.eY;
 
+            windowManager = wm;
             renderer = new WindowRenderer(this, wm);
 
         }
